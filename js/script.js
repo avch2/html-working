@@ -55,9 +55,6 @@ document.addEventListener('DOMContentLoaded', () => { // обработчик с
             createMovieList(movieDB.movies, movieList);
         }
         
-
-        
-
         event.target.reset(); //сброс формы
     });
 
@@ -77,16 +74,14 @@ document.addEventListener('DOMContentLoaded', () => { // обработчик с
         poster.style.backgroundImage = 'url("img/bg.jpg")';
     };
 
-    const sortArr = (arr) => {//функция сортировки элементов массива
+    const sortArr = (arr) => { //функция сортировки элементов массива
         arr.sort();
     };
     
-    function createMovieList(films, parent) {//films - фильмы для обработки(movieDB.movies), parent - родитель,который будет использовать эти фильмы(movieList)
+    function createMovieList(films, parent) { //films - фильмы для обработки(movieDB.movies), parent - родитель,который будет использовать эти фильмы(movieList)
         parent.innerHTML = ""; 
-        sortArr(films);
-    
-    
-    
+        sortArr(films); //сортировка фильмов
+        
         films.forEach((film, i) => {
             parent.innerHTML += `
                 <li class="promo__interactive-item">${i + 1} ${film}
@@ -108,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => { // обработчик с
 
     deleteAdv(adv);
     makeChanges();
-    sortArr(movieDB.movies)
+    
     createMovieList(movieDB.movies, movieList);
 
 });
